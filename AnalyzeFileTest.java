@@ -13,11 +13,14 @@ public class AnalyzeFileTest
             analyze = new AnalyzeFile("words.txt");
             analyze.readFile();
             analyze.outputData();
-            analyze.closeFile();
        } 
        catch(IOException e)
        {
            System.err.print("File doesn't exist or some other error."); 
-       }   
+       }
+       finally
+       {
+           analyze.closeFile();
+       }
     }
 }
